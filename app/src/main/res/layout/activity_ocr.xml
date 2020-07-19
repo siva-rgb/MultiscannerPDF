@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OcrActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/lineee1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="OCR (Optical Character Recognition)"
+                android:textSize="25sp"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ocrb"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@android:color/white"
+                android:text="select images"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#fff"
+                app:cardUseCompatPadding="true"
+                android:layout_marginTop="40dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="3dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Result"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorPrimary"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/spinner_language_from"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:spinnerMode="dropdown" />
+
+                        <ImageView
+                            android:id="@+id/image_swap"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.1"
+                            android:src="@drawable/swap_icon"
+                            android:tint="@android:color/black" />
+
+                        <Spinner
+                            android:id="@+id/spinner_language_to"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:spinnerMode="dropdown" />
+
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/resultEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="148dp"
+                        android:autoLink="all"
+                        android:hint=""
+                        android:padding="5dp"
+                        android:textColor="#000" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#fff"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="3dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Image Preview"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorPrimary"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxHeight="250dp"
+                        android:id="@+id/imageIv"/>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_weight="0.5">
+
+                <ImageView
+                    android:id="@+id/image_listen"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/microphone"
+                    android:tint="@android:color/white" />
+
+                <ImageView
+                    android:id="@+id/clear_text"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/clear_icon"
+                    android:tint="@android:color/white" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/button_translate"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0.12"
+                android:background="@drawable/button_shape"
+                android:gravity="center"
+                android:text="@string/new_translate"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/translate_text_size" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="181dp"
+                android:layout_weight="0.5">
+
+                <TextView
+                    android:text="Translate"
+                    android:id="@+id/text_translated"
+                    android:layout_width="match_parent"
+                    android:layout_height="169dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:padding="16dp"
+                    android:paddingBottom="30dp"
+                    android:scrollbars="vertical"
+                    android:textSize="@dimen/translate_text_size" />
+
+                <ImageView
+                    android:id="@+id/image_speak"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/volume"
+                    android:tint="@android:color/darker_gray" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</ScrollView>
